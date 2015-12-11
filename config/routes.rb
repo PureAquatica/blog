@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :posts
+ # This app built from a tutorial from https://www.reinteractive.net/posts/32-ruby-on-rails-3-2-blog-in-15-minutes-step-by-step
+ 
+ 
+ 
+ # resources :comments
+  resources :posts do
+    resources :comments, :only => [:create]
+  end
+    
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
